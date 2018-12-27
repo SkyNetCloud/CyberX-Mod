@@ -1,0 +1,52 @@
+//Armour
+item.ruby_helmet.name=Ruby Helmet
+item.ruby_chestplate.name=Ruby Chestplate
+item.ruby_leggings.name=Ruby Leggings
+item.ruby_boots.name=Ruby Boots
+
+item.dark_steel_helmet.name= Dark Steel Helmet
+item.dark_steel_chestplate.name= Dark Steel Chestplate
+item.dark_steel_leggings.name= Dark Steel Leggings
+item.dark_steel_boots.name= Dark Steel Boots
+
+
+//Blocks
+tile.dark_steel_block.name= Dark Steel Block
+tile.ruby_block.name= Ruby Block
+tile.vibranium.name= Vibranium Block
+tile.power_block.name= Power Block
+
+
+//Ores
+tile.ruby_ore.name= Ruby Ore
+tile.nether_ruby_ore.name= Nether Ruby Ore
+tile.steel_ore.name= Dark Steel Ore
+tile.vibranium_ore.name= Vibranium Ore
+tile.end_vibranium_ore.name= End Vibranium Ore
+
+//Tools
+item.dark_steel_axe.name= Dark Steel Axe
+item.dark_steel_sword.name= Dark Steel Sword
+item.dark_steel_pickaxe.name= Dark Steel Pickaxe
+item.dark_steel_hoe.name= Dark Steel Hoe
+item.dark_steel_shovel.name= Dark Steel Shovel
+
+item.ruby_sword.name=Ruby Sword
+item.ruby_shovel.name=Ruby Shovel
+item.ruby_pickaxe.name=Ruby Pickaxe
+item.ruby_axe.name=Ruby Axe
+item.ruby_hoe.name=Ruby Hoe
+
+
+
+//Item
+item.ruby.name= Ruby Gem
+item.dark_steel.name= Dark Steel Ingot
+item.ruby_dust.name= Ruby Gem Dust
+item.dark_steel_dust.name= Steel Dust
+item.vibranium.name= Vibranium Ingot
+
+
+
+//Creative Tabs
+itemGroup.cybertab= Cyber X Tab

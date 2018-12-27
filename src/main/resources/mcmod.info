@@ -1,0 +1,18 @@
+[
+{
+  "modid": "cx",
+  "name": "Cyber X",
+  "description": "This is a power and machine base mod ",
+  "version": "${version}",
+  "mcversion": "${mc_version}",
+  "url": "skynetcloud.xyz/CyberX-Mod",
+  "updateUrl": "",
+  "authorList": ["SkyNetCloud"],
+  "credits": "To SallyTrivone for making the logo",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [
+        "forge,cofhworld,cofhcore,redstoneflux"
+  ]
+}
+]
