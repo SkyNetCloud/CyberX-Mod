@@ -453,7 +453,8 @@ public class TeleporterDimension extends Teleporter {
 		}
 	}// fire block end
 
-	//PORTAL BLOCK
+	//PORTAL BLOCK 
+	
 	public static class BlockTutorialPortal extends Block {
 
 		public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.<EnumFacing.Axis> create("axis", EnumFacing.Axis.class,

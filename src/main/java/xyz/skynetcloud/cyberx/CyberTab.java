@@ -3,6 +3,7 @@ package xyz.skynetcloud.cyberx;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import xyz.skynetcloud.cyberx.init.ItemInit;
 
 public class CyberTab extends CreativeTabs {
 
@@ -14,7 +15,7 @@ public class CyberTab extends CreativeTabs {
 
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(Items.APPLE);
+		return new ItemStack(ItemInit.DARK_STEEL);
 	}
 
 }
