@@ -17,7 +17,7 @@ import xyz.skynetcloud.cyberx.items.tools.ToolHoeBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolPickaxeBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolShovelBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolSwordBase;
-import xyz.skynetcloud.cyberx.commands.util.TeleporterDimension.TiggerItem;
+
 
 public class ItemInit {
 
@@ -38,7 +38,6 @@ public class ItemInit {
 	public static final Item RUBY = new ItemBase("ruby", Main.CYBERTAB);
 	public static final Item RUBY_DUST = new ItemBase("ruby_dust", Main.CYBERTAB);
 	public static final Item VIBRANIUM =  new ItemBase("vibranium", Main.CYBERTAB);
-	public static final Item TiggerItem = new TiggerItem("", Main.CYBERTAB);
 	
 	//Dark Steel Tools
 	public static final Item DARK_STEEL_AXE = new ToolAxeBase("dark_steel_axe", MATERIAL_DARK_STEEL, Main.CYBERTAB);
