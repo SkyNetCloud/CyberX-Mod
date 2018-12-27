@@ -1,7 +1,13 @@
 package xyz.skynetcloud.cyberx.world.dimensions;
 
+import java.util.Random;
+
+import javax.swing.text.html.parser.Entity;
+
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.IChunkGenerator;
 import xyz.skynetcloud.cyberx.init.BiomeInit;
@@ -10,10 +16,13 @@ import xyz.skynetcloud.cyberx.world.generation.chunks.ChunkGeneratorNetherTempla
 
 public class DimensionLibrary extends WorldProvider
 {
+	
+	
 	public DimensionLibrary() 
 	{
 		this.biomeProvider = new BiomeProviderSingle(BiomeInit.COPPER);
 		this.hasSkyLight = false;
+		
 	}
 	
 	@Override
