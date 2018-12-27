@@ -31,7 +31,7 @@ public class BlockInit
     //Dark Steel
     public static final Block DARK_STEEL_BLOCK = new SteelBlock("dark_steel_block", Material.IRON,Main.CYBERTAB);
     public static final Block DARK_STEEL_ORE = new SteelOre("dark_steel_ore", Material.GROUND, Main.CYBERTAB);
-
+    
     //Ruby
     public static final Block RUBY_BLOCK = new RubyBlock("ruby_block", Material.IRON, Main.CYBERTAB);
     public static final Block RUBY_ORE = new RubyOre("ruby_ore", Material.GOURD, Main.CYBERTAB);

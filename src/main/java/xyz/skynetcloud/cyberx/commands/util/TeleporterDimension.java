@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.player.EntityPlayer;
@@ -75,20 +76,18 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import xyz.skynetcloud.cyberx.Main;
+import xyz.skynetcloud.cyberx.commands.util.TeleporterDimension.BlockTutorialPortal;
 import xyz.skynetcloud.cyberx.init.BlockInit;
+import xyz.skynetcloud.cyberx.init.ItemInit;
 import xyz.skynetcloud.cyberx.util.ModConfig;
 
 public class TeleporterDimension extends Teleporter {
-	
-	
+	  
 
-	static {
-		portal = (BlockTutorialPortal) (new BlockTutorialPortal().setUnlocalizedName("darkness_portal"));
-		block = (ModTrigger) (new ModTrigger().setUnlocalizedName("darkness_portal_trigger"));
-	}
+       
 
 	    public static BlockTutorialPortal portal;
-	    public static ModTrigger block;
+	    public static TiggerItem block;
 		private final WorldServer worldServerInstance;
 		private final Random random;
 		private final it.unimi.dsi.fastutil.longs.Long2ObjectMap<Teleporter.PortalPosition> destinationCoordinateCache = new it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap(
@@ -442,7 +441,7 @@ public class TeleporterDimension extends Teleporter {
 		}
 	
 
-	// /FIRE BLOCK
+	//FIRE BLOCK
 	public static class BlockFireMod extends Block {
 
 		protected BlockFireMod() {
@@ -453,8 +452,8 @@ public class TeleporterDimension extends Teleporter {
 			/* TutorialPortal.tryToCreatePortal(par1World, par2, par3, par4); */
 		}
 	}// fire block end
-		// /PORTAL BLOCK
 
+	//PORTAL BLOCK
 	public static class BlockTutorialPortal extends Block {
 
 		public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.<EnumFacing.Axis> create("axis", EnumFacing.Axis.class,
@@ -705,54 +704,7 @@ public class TeleporterDimension extends Teleporter {
 	}
 
 	// portal block
-	public static class ModTrigger extends Item {
 
-		public ModTrigger() {
-			super();
-			this.maxStackSize = 1;
-			setMaxDamage(64);
-			setCreativeTab(Main.CYBERTAB);
-		}
-
-		@Override
-		public EnumActionResult onItemUse(EntityPlayer par2EntityPlayer, World par3World, BlockPos pos, EnumHand hand, EnumFacing side, float par8,
-				float par9, float par10) {
-			ItemStack par1ItemStack = par2EntityPlayer.getHeldItem(hand);
-			int par4 = pos.getX();
-			int par5 = pos.getY();
-			int par6 = pos.getZ();
-			int par7 = side.getIndex();
-			if (par7 == 0) {
-				par5--;
-			}
-			if (par7 == 1) {
-				par5++;
-			}
-			if (par7 == 2) {
-				par6--;
-			}
-			if (par7 == 3) {
-				par6++;
-			}
-			if (par7 == 4) {
-				par4--;
-			}
-			if (par7 == 5) {
-				par4++;
-			}
-			if (!par2EntityPlayer.canPlayerEdit(new BlockPos(par4, par5, par6), side, par1ItemStack)) {
-				return EnumActionResult.FAIL;
-			}
-			Block i1 = getBlock(par3World, par4, par5, par6);
-			if (i1 == Blocks.AIR) {
-				par3World.playSound(par2EntityPlayer, new BlockPos(par4, par5, par6), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F,
-						itemRand.nextFloat() * 0.4F + 0.8F);
-				portal.tryToCreatePortal(par3World, par4, par5, par6);
-			}
-			par1ItemStack.damageItem(1, par2EntityPlayer);
-			return EnumActionResult.SUCCESS;
-		}
-	}
 
 	public static class ChunkProviderModded implements IChunkGenerator {
 
@@ -1354,14 +1306,61 @@ public class TeleporterDimension extends Teleporter {
 		}
 	}
 	
+	public static class TiggerItem extends Item {
+		
+		public TiggerItem(String name, CreativeTabs tab) {
+			super();
+			this.maxStackSize = 1;
+			setMaxDamage(64);
+			setUnlocalizedName(name);
+			setRegistryName(name);
+		}
+		
+		@Override
+		public EnumActionResult onItemUse(EntityPlayer par2EntityPlayer, World par3World, BlockPos pos, EnumHand hand, EnumFacing side, float par8,
+				float par9, float par10) {
+			ItemStack par1ItemStack = par2EntityPlayer.getHeldItem(hand);
+			int par4 = pos.getX();
+			int par5 = pos.getY();
+			int par6 = pos.getZ();
+			int par7 = side.getIndex();
+			if (par7 == 0) {
+				par5--;
+			}
+			if (par7 == 1) {
+				par5++;
+			}
+			if (par7 == 2) {
+				par6--;
+			}
+			if (par7 == 3) {
+				par6++;
+			}
+			if (par7 == 4) {
+				par4--;
+			}
+			if (par7 == 5) {
+				par4++;
+			}
+			if (!par2EntityPlayer.canPlayerEdit(new BlockPos(par4, par5, par6), side, par1ItemStack)) {
+				return EnumActionResult.FAIL;
+			}
+			Block i1 = getBlock(par3World, par4, par5, par6);
+			if (i1 == Blocks.AIR) {
+				par3World.playSound(par2EntityPlayer, new BlockPos(par4, par5, par6), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F,
+						itemRand.nextFloat() * 0.4F + 0.8F);
+				portal.tryToCreatePortal(par3World, par4, par5, par6);
+			}
+			par1ItemStack.damageItem(1, par2EntityPlayer);
+			return EnumActionResult.SUCCESS;
+		}
 	
+	}
 	
-	
-	
-
 	// helpers
 	public static Block getBlock(IBlockAccess world, int i, int j, int k) {
 		return world.getBlockState(new BlockPos(i, j, k)).getBlock();
 	}
+
 
 }

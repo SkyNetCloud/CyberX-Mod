@@ -17,6 +17,7 @@ import xyz.skynetcloud.cyberx.items.tools.ToolHoeBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolPickaxeBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolShovelBase;
 import xyz.skynetcloud.cyberx.items.tools.ToolSwordBase;
+import xyz.skynetcloud.cyberx.commands.util.TeleporterDimension.TiggerItem;
 
 public class ItemInit {
 
@@ -25,8 +26,7 @@ public class ItemInit {
 	//Armour Materials 
 	public static final ArmorMaterial ARMOUR_DARK_STEEL_MATERIAL = EnumHelper.addArmorMaterial("armour_dark_steel", Main.MODID + ":dark_steel", 23, new int[] {2,5,7,3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F);
 	public static final ArmorMaterial ARMOUR_MATERIAL_RUBY = EnumHelper.addArmorMaterial("armour_material_ruby", Main.MODID + ":ruby", 14, new int[] {2, 5, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-	
-	
+		
 	//Tool Materials 
 	public static final ToolMaterial MATERIAL_DARK_STEEL = EnumHelper.addToolMaterial("material_dark_steel", 25, 250, 8.0F, 3.0F, 10);
 	public static final ToolMaterial MATERIAL_RUBY = EnumHelper.addToolMaterial("material_ruby", 15, 250, 8.0F, 3.0F, 10);
@@ -38,7 +38,7 @@ public class ItemInit {
 	public static final Item RUBY = new ItemBase("ruby", Main.CYBERTAB);
 	public static final Item RUBY_DUST = new ItemBase("ruby_dust", Main.CYBERTAB);
 	public static final Item VIBRANIUM =  new ItemBase("vibranium", Main.CYBERTAB);
-	
+	public static final Item TiggerItem = new TiggerItem("", Main.CYBERTAB);
 	
 	//Dark Steel Tools
 	public static final Item DARK_STEEL_AXE = new ToolAxeBase("dark_steel_axe", MATERIAL_DARK_STEEL, Main.CYBERTAB);
@@ -52,7 +52,6 @@ public class ItemInit {
 	public static final Item RUBY_PICKAXE = new ToolPickaxeBase("ruby_pickaxe", MATERIAL_RUBY, Main.CYBERTAB);
 	public static final Item RUBY_AXE = new ToolAxeBase("ruby_axe", MATERIAL_RUBY, Main.CYBERTAB);
 	public static final Item RUBY_HOE = new ToolHoeBase("ruby_hoe", MATERIAL_RUBY, Main.CYBERTAB);
-	
 	
 	//Dark Steel Armor
 	public static final Item DARK_STEEL_HELMET = new ArmourBase("dark_steel_helmet", ARMOUR_DARK_STEEL_MATERIAL, 1, EntityEquipmentSlot.HEAD);
