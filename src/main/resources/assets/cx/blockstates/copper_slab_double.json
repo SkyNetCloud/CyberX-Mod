@@ -1,0 +1,6 @@
+{
+    "variants":
+    {
+        "variant=default": { "model": "cx:ruby_slab_double" }
+    }
+}

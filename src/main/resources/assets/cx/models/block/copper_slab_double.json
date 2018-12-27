@@ -2,6 +2,6 @@
     "parent": "block/cube_all",
     "textures":
     {
-        "all": "cx:blocks/ruby_ore"
+        "all": "cx:blocks/copper_block"
     }
 }

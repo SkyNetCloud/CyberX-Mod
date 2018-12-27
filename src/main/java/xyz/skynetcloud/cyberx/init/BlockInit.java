@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPurpurSlab.Half;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import xyz.skynetcloud.cyberx.Main;
@@ -15,6 +17,7 @@ import xyz.skynetcloud.cyberx.blocks.machines.PowerBlock;
 import xyz.skynetcloud.cyberx.blocks.ores.RubyOre;
 import xyz.skynetcloud.cyberx.blocks.ores.SteelOre;
 import xyz.skynetcloud.cyberx.blocks.ores.VibraniumOre.EndVibraniumOre;
+
 
 public class BlockInit 
 {
@@ -36,6 +39,7 @@ public class BlockInit
     
     public static final Block DARKBLOCK = new BlockBase("block_dark", Material.GROUND, Main.CYBERTAB);
     
+      
     //Vibarnium
     public static final Block VIBRANIUM_BLOCK = new VibraniumBlock("vibranium_block", Material.IRON, Main.CYBERTAB);
     public static final Block VIBRANIUM_ORE = new VibraniumBlock("vibranium_ore", Material.GROUND, Main.CYBERTAB);

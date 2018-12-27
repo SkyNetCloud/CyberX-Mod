@@ -2,8 +2,8 @@
     "parent": "block/half_slab",
     "textures":
     {
-        "bottom": "cxr:blocks/ruby_ore",
-        "top": "cxr:blocks/ruby_ore",
-        "side": "cxr:blocks/ruby_ore"
+        "bottom": "cx:blocks/ruby_ore",
+        "top": "cx:blocks/ruby_ore",
+        "side": "cx:blocks/ruby_ore"
     }
 }
