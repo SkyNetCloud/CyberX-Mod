@@ -18,6 +18,7 @@ public class ModConfig {
 	public Logger logger;
 
 
+	public static Configuration config;
 
     private static final String CATEGORY_GENERAL = "general";
     private static final String CATEGORY_DIMENSIONS = "dimensions";
@@ -29,7 +30,7 @@ public class ModConfig {
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
     public static void readConfig() {
-        Configuration cfg = CommonProxy.config;
+        Configuration cfg = ModConfig.config;
         try {
             cfg.load();
             initGeneralConfig(cfg);
