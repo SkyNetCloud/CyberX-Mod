@@ -41,6 +41,8 @@ public class Main
 	@Instance
 	public static Main instance;
 	
+	public static Logger logger;
+	
 	public static final CreativeTabs CYBERTAB = new CyberTab("cybertab");
 	
     @SidedProxy(clientSide = CLIENT, serverSide = SERVER)

@@ -5,11 +5,14 @@ package xyz.skynetcloud.cyberx.util;
 import java.io.File;
 import java.util.logging.Logger;
 
+import org.apache.logging.log4j.Level;
+
 import akka.actor.FSM.Event;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import xyz.skynetcloud.cyberx.Main;
 import xyz.skynetcloud.cyberx.proxy.CommonProxy;
+import xyz.skynetcloud.cyberx.util.handlers.RegistryHandler;
 
 public class ModConfig {
 	
@@ -24,19 +27,21 @@ public class ModConfig {
     private static final String CATEGORY_DIMENSIONS = "dimensions";
 
     // This values below you can access elsewhere in your mod:
-    public static boolean isThisAGoodTutorial = true;
-    public static String yourRealName = "Steve";
+    public static boolean isThisAGoodTutorial = false;
+    public static String yourRealName = "SkyNetCloud";
+	public static boolean spawnCustomBiomesInOverworld = true;
+	public static float rfCost = 1200;
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
     public static void readConfig() {
-        Configuration cfg = ModConfig.config;
+        Configuration cfg = RegistryHandler.config;
         try {
             cfg.load();
             initGeneralConfig(cfg);
             initDimensionConfig(cfg);
         } catch (Exception e1) {
-		         
+            Main.logger.log(Level.ERROR, "Problem loading config file!", e1);
         } finally {
             if (cfg.hasChanged()) {
                 cfg.save();
@@ -55,5 +60,4 @@ public class ModConfig {
         cfg.addCustomCategoryComment(CATEGORY_DIMENSIONS, "Dimension configuration");
 
     }
-
 }

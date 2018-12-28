@@ -22,7 +22,7 @@ public class BiomeInit
 	private static Biome initBiome(Biome biome, String name, BiomeType biomeType, Type... types)
 	{
 		biome.setRegistryName(name);
-		ForgeRegistries.BIOMES.register(biome);
+		ForgeRegistries.BIOMES.register(biome); 
 		BiomeDictionary.addTypes(biome, types);
 		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, 10));
 		

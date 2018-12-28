@@ -57,7 +57,7 @@ public  class TileEntityPowerBlock extends TileEntity implements  IEnergyHandler
 		return energyExtracted;
 	}
 
-	public void changeCharge(int amount) {
+	public void changeCharge(int amount) { 
 		int prevAmount = currentStorage;
 		
 		currentStorage += amount;
