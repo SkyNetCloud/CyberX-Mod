@@ -1,11 +1,14 @@
 package xyz.skynetcloud.cyberx.util.handlers;
 
+import java.io.File;
+
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.obj.OBJLoader;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -28,6 +31,9 @@ import xyz.skynetcloud.cyberx.world.generation.WorldGenOres;
 @EventBusSubscriber
 public class RegistryHandler 
 {
+	
+	 public static Configuration config;
+	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
@@ -70,8 +76,12 @@ public class RegistryHandler
 	public static void preInitRegistries(FMLPreInitializationEvent event)
 	{
 
+		File directory = event.getModConfigurationDirectory();
+        config = new Configuration(new File(directory.getPath(), "cyberx.cfg"));
+        ModConfig.readConfig();
+		
 		GameRegistry.registerWorldGenerator(new WorldGenOres(), 0);
-		ModConfig.save(event);
+		
 		
 		
 		DimensionInit.registerDimensions();
@@ -87,7 +97,10 @@ public class RegistryHandler
 	
 	public static void postInitRegistries(FMLPostInitializationEvent event)
 	{
-
+        if (config.hasChanged()) {
+            config.save();
+        }
+		
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
