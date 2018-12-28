@@ -8,15 +8,18 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import xyz.skynetcloud.cyberx.util.ModConfig;
-import xyz.skynetcloud.cyberx.world.biomes.BiomeCopper;
+import xyz.skynetcloud.cyberx.world.biomes.DarknessLand;
+import xyz.skynetcloud.cyberx.world.biomes.GlassBiome;
 
 public class BiomeInit 
 {
-	public static final Biome COPPER = new BiomeCopper();
+	public static final Biome GLASS_BIOME = new GlassBiome();
+	public static final Biome DAKRNESS_BIOME = new DarknessLand();
 	
 	public static void registerBiomes()
 	{
-		initBiome(COPPER, "Copper", BiomeType.WARM, Type.HILLS, Type.MOUNTAIN, Type.DRY);
+		initBiome(GLASS_BIOME, "Glass_Biome", BiomeType.WARM, Type.PLAINS, Type.DRY);
+		initBiome(DAKRNESS_BIOME, "Darkness_Biome", BiomeType.COOL, Type.DEAD, Type.FOREST);
 	}
 	
 	private static Biome initBiome(Biome biome, String name, BiomeType biomeType, Type... types)

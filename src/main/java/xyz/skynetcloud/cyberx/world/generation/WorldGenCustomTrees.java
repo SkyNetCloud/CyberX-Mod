@@ -15,7 +15,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import xyz.skynetcloud.cyberx.init.BlockInit;
-import xyz.skynetcloud.cyberx.world.biomes.BiomeCopper;
+import xyz.skynetcloud.cyberx.world.biomes.GlassBiome;
 import xyz.skynetcloud.cyberx.world.generation.generators.WorldGenAluminiumTree;
 import xyz.skynetcloud.cyberx.world.generation.generators.WorldGenCopperTree;
 
@@ -35,7 +35,7 @@ public class WorldGenCustomTrees implements IWorldGenerator
 			
 		case 0:
 			
-			runGenerator(COPPER, world, random, chunkX, chunkZ, 5, BlockInit.DARK_STEEL_BLOCK, BiomeCopper.class);
+			runGenerator(COPPER, world, random, chunkX, chunkZ, 5, BlockInit.DARK_STEEL_BLOCK, GlassBiome.class);
 			runGenerator(ALUMINIUM, world, random, chunkX, chunkZ, 5, Blocks.GRASS, BiomePlains.class);
 			
 			break;

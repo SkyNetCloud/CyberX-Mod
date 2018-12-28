@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import scala.actors.threadpool.Arrays;
 import xyz.skynetcloud.cyberx.init.BlockInit;
-import xyz.skynetcloud.cyberx.world.biomes.BiomeCopper;
+import xyz.skynetcloud.cyberx.world.biomes.GlassBiome;
 import xyz.skynetcloud.cyberx.world.generation.generators.WorldGenStructure;
 
 public class WorldGenCustomStructures implements IWorldGenerator
@@ -36,7 +36,7 @@ public class WorldGenCustomStructures implements IWorldGenerator
 			
 		case 0:
 			
-			generateStructure(ARMOURY, world, random, chunkX, chunkZ, 20, Blocks.DIRT, BiomeCopper.class);
+			generateStructure(ARMOURY, world, random, chunkX, chunkZ, 20, Blocks.DIRT, GlassBiome.class);
 			
 			break;
 			
