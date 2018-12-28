@@ -18,6 +18,7 @@ public class ModConfig {
 	
 	
 	public static int DIMENSION_CYBER_ID = 12;
+	public static boolean CYBER = false;
 	public Logger logger;
 
 
@@ -28,6 +29,10 @@ public class ModConfig {
 
     // This values below you can access elsewhere in your mod:
     public static boolean isThisAGoodTutorial = false;
+    
+    
+    
+    
     public static String yourRealName = "SkyNetCloud";
 	public static boolean spawnCustomBiomesInOverworld = true;
 	public static float rfCost = 1200;
@@ -58,6 +63,9 @@ public class ModConfig {
 
     private static void initDimensionConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_DIMENSIONS, "Dimension configuration");
+        DIMENSION_CYBER_ID = cfg.getInt("DIMID", CATEGORY_DIMENSIONS, DIMENSION_CYBER_ID, 3,120, "Change Id If You want to");
+        
+        spawnCustomBiomesInOverworld = cfg.getBoolean("spawnCustomBiomesInOverworld", CATEGORY_DIMENSIONS, true, "Decide to disable this if you want the my Biomes To spawn in the workd");
 
     }
 }
