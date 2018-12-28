@@ -48,7 +48,7 @@ public class ChunkGeneratorNetherTemplate implements IChunkGenerator
     protected static final IBlockState OTHER_BLOCK1 = Blocks.GLASS.getDefaultState();
     protected static final IBlockState OTHER_BLOCK2 = Blocks.GOLD_ORE.getDefaultState();
     
-    protected static final IBlockState OTHER_BLOCK3 = BlockInit.DARK_STEEL_ORE.getDefaultState();
+    protected static final IBlockState OTHER_BLOCK3 = BlockInit.DARK_STEEL_ORE.getDefaultState(); 
     protected static final IBlockState OTHER_BLOCK4 = BlockInit.RUBY_ORE.getDefaultState();
     protected static final IBlockState OTHER_BLOCK5 = BlockInit.VIBRANIUM_ORE.getDefaultState();
     

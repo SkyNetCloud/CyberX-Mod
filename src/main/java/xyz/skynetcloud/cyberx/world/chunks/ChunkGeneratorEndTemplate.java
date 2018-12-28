@@ -199,7 +199,7 @@ public class ChunkGeneratorEndTemplate implements IChunkGenerator
                     }
                 }
             }
-        }
+        } 
     }
 
     @Override
